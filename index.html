@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasinee Saard - My Page v2</title>
+    <!-- Google Fonts (Mitr & Noto Sans Thai) ตามสไลด์หน้า 142 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;600;700&family=Noto+Sans+Thai:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- เชื่อมต่อไปยัง styles.css -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header: จัด Layout รูปโปรไฟล์และข้อมูลด้วย Table พร้อมเว้นระยะห่าง -->
+    <header class="header-container">
+        <table class="profile-layout-table" cellspacing="30">
+            <tr>
+                <!-- ฝั่งซ้าย: รูปภาพโปรไฟล์วงกลมแบบคลีน  -->
+                <td class="profile-img-cell">
+                    <img src="12170.jpeg" alt="Wasinee Saard Profile Picture" class="profile-img">
+                </td>
+                <!-- ฝั่งขวา: รายละเอียดข้อมูลส่วนตัว -->
+                <td class="profile-info-cell">
+                    <p class="tagline"><em>"สวัสดีค่ะ"</em></p>
+                    <h1 class="display-name">Wasinee Saard</h1>
+                    
+                    <table class="personal-info-table">
+                        <tr>
+                            <td><strong>Position:</strong></td>
+                            <td>2nd-Year Student</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Major:</strong></td>
+                            <td>Computer Engineering and Artificial Intelligence</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Institution:</strong></td>
+                            <td>Panyapiwat Institute of Management</td>
+                        </tr>
+                    </table>
+
+                    <div class="header-btn-wrap">
+                        <a href="contact.html" class="btn-primary">Contact Me</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </header>
+
+    <!-- เนื้อหาหลัก (Main Content) -->
+    <main class="content-container">
+
+        <!-- 1. About Me (กล่องสี่เหลี่ยมขอบคม สูงเท่าช่องข้อความขวามือ) -->
+        <section class="split-section">
+            <div class="square-title-box title-about">
+                <h2>About<br>Me</h2>
+            </div>
+            <div class="split-content-box">
+                <p>
+                    My name is <strong>Pang</strong>  and I am from Lopburi, Thailand. I enjoy listening to music and solving Sudoku puzzles.
+
+My ultimate goals in life are to gain knowledge in various fields so that I can pursue a wide range of career opportunities and to earn enough money to take my older sister on as many trips abroad as possible. I also dream of sponsoring the education of one or more children and helping cover medical expenses for people in need and many animals.
+
+
+                </p>
+                <p>
+                    Currently, I am learning Full Stack Web Development and AI applications. 
+                    One of my web projects is <strong>"TODAY IS MENU" (วันนี้กินอะไรดี?)</strong>, which helps recommend random meals: 
+                    <a href="https://wasineesaa.github.io/today-is-menu/" target="_blank">View "TODAY IS MENU"</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- เส้นคั่นจุดไข่ปลา Dotted HR ตามสไลด์ PA 3.1 -->
+        <hr class="dotted-hr">
+
+        <!-- 2. My Favorite Foods (กล่องสี่เหลี่ยมขอบคม สูงเท่าช่องข้อความขวามือ) -->
+        <section class="split-section">
+            <div class="square-title-box title-food">
+                <h2>Favorite<br>Foods</h2>
+            </div>
+            <div class="split-content-box">
+                <ul class="food-list">
+                    <li>Moo Kratha </li>
+                    <li>Salmon Donburi </li>
+                    <li>Hat Yai-style Fried Chicken</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- เส้นคั่นจุดไข่ปลา Dotted HR ตามสไลด์ PA 3.1 -->
+        <hr class="dotted-hr">
+
+        <!-- 3. Work Experience (ตารางเส้นหนาและชัดเจนขึ้น) -->
+        <section class="card">
+            <h2>Work Experience</h2>
+            <table class="experience-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Work Place</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>June 2024 - August 2024</td>
+                        <td>Health Up</td>
+                    </tr>
+                    <tr>
+                        <td>March 2025 - September 2025</td>
+                        <td>7-Eleven </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- เส้นคั่นจุดไข่ปลา Dotted HR ตามสไลด์ PA 3.1 -->
+        <hr class="dotted-hr">
+
+        <!-- 4. Skills (ตาราง 4 คอลัมน์ ล้อมด้วยกรอบเส้นประ Dashed Border) -->
+        <section class="card">
+            <h2>Skills</h2>
+            <table class="skills-box-table">
+                <tr>
+                    <td class="skill-name">Python</td>
+                    <td class="skill-level">⭐⭐⭐</td>
+                    <td class="skill-name">English</td>
+                    <td class="skill-level">⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td class="skill-name">SQL</td>
+                    <td class="skill-level">⭐⭐⭐⭐</td>
+                    <td class="skill-name">French</td>
+                    <td class="skill-level">⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td class="skill-name">Java</td>
+                    <td class="skill-level">⭐⭐⭐</td>
+                    <td class="skill-name">Japanese</td>
+                    <td class="skill-level">⭐⭐</td>
+                </tr>
+                <tr>
+                    <td class="skill-name">Sales </td>
+                    <td class="skill-level">⭐⭐⭐⭐</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- Footer: Link GitHub & contact.html -->
+    <footer class="footer-container">
+        <p>&copy; 2026 Wasinee S. </p>
+        <p>
+            <a href="https://github.com/wasineesaa" target="_blank">GitHub Profile</a> | 
+            <a href="contact.html">Contact Us</a>
+        </p>
+    </footer>
+
+</body>
+</html>

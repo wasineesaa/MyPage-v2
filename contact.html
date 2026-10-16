@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Wasinee Saard</title>
+    <!-- ดึง Google Fonts เช่นเดียวกับ index.html -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;600;700&family=Noto+Sans+Thai:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- ใช้ styles.css ร่วมกับ index.html -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header-container compact">
+        <h1>Contact Me</h1>
+        <p>Feel free to get in touch with me via the form below!</p>
+    </header>
+
+    <main class="content-container">
+        <section class="card form-card">
+            <h2>Send a Message</h2>
+            <form action="#" method="POST" class="contact-form">
+                
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Submit Message</button>
+                    <a href="index.html" class="btn-secondary">Back to Home</a>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer-container">
+        <p>&copy; 2026 Wasinee Saard. All Rights Reserved.</p>
+        <p>
+            <a href="https://github.com/wasineesaa" target="_blank">GitHub Profile</a> | 
+            <a href="index.html">Home</a>
+        </p>
+    </footer>
+
+</body>
+</html>
