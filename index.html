@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;600;700&family=Noto+Sans+Thai:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- เชื่อมต่อไปยัง styles.css พร้อมใส่ตัวดักแคช ?v=4 -->
-    <link rel="stylesheet" href="styles.css?v=4">
+    <!-- เชื่อมต่อไปยัง styles.css พร้อมใส่ตัวดักแคช ?v=5 -->
+    <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
@@ -21,21 +21,25 @@
                 <td class="profile-img-cell">
                     <img src="12170.jpeg" alt="Wasinee Saard Profile Picture" class="profile-img">
                 </td>
-                <!-- ฝั่งขวา: รายละเอียดข้อมูลส่วนตัว -->
+                <!-- ฝั่งขวา: รายละเอียดข้อมูลส่วนตัว (รวมอยู่ในตารางเดียวตามโจทย์อาจารย์) -->
                 <td class="profile-info-cell">
                     <p class="tagline"><em>"สวัสดีค่ะ"</em></p>
                     
-                    <!-- เปลี่ยนข้อความใหญ่เป็นสาขาวิชา/ตำแหน่ง พร้อมรักษาคลาส display-name เพื่อใช้ลูกเล่นเดิม -->
-                    <h1 class="display-name">Computer Engineering<br>&amp; AI Student</h1>
-                    
                     <table class="personal-info-table">
-                        <tr>
+                        <tr class="name-row">
                             <td><strong>Name:</strong></td>
-                            <td>Wasinee Saard</td>
+                            <td>
+                                <!-- WASINEE SAARD อยู่ใน Table พร้อมลูกเล่น CSS เดิม -->
+                                <span class="display-name-text">Wasinee Saard</span>
+                            </td>
                         </tr>
                         <tr>
                             <td><strong>Position:</strong></td>
                             <td>2nd-Year Student</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Major:</strong></td>
+                            <td>Computer Engineering and Artificial Intelligence</td>
                         </tr>
                         <tr>
                             <td><strong>Institution:</strong></td>
@@ -137,4 +141,28 @@
                 <tr>
                     <td class="skill-name">Java</td>
                     <td class="skill-level">⭐⭐</td>
-                    <td class
+                    <td class="skill-name">Japanese</td>
+                    <td class="skill-level">⭐⭐</td>
+                </tr>
+                <tr>
+                    <td class="skill-name">Sales</td>
+                    <td class="skill-level">⭐⭐⭐⭐</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-container">
+        <p>&copy; 2026 Wasinee S.</p>
+        <p>
+            <a href="https://github.com/wasineesaa" target="_blank">GitHub Profile</a> | 
+            <a href="contact.html">Contact Us</a>
+        </p>
+    </footer>
+
+</body>
+</html>
