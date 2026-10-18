@@ -1,7 +1,7 @@
 /* ==========================================================
    1. GLOBAL RESET & TYPOGRAPHY
    ========================================================== */
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,7 +9,8 @@
 
 html, body {
     width: 100%;
-    overflow-x: hidden; /* ป้องกันหน้าเว็บเลื่อนออกด้านข้าง */
+    max-width: 100%;
+    overflow-x: hidden; /* ป้องกันไม่ให้หน้าเว็บเลื่อนออกด้านข้าง */
 }
 
 body {
@@ -198,7 +199,7 @@ hr.dotted-hr {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-width: 0; /* ป้องกัน flex-item ล้น */
+    min-width: 0;
 }
 
 .split-content-box p {
@@ -224,7 +225,7 @@ hr.dotted-hr {
 }
 
 /* ==========================================================
-   4. CARDS, WORK EXPERIENCE & SKILLS
+   4. CARDS, WORK EXPERIENCE & SKILLS (DESKTOP)
    ========================================================== */
 .card {
     background: #ffffff;
@@ -281,7 +282,7 @@ hr.dotted-hr {
     background-color: #f3f7f8;
 }
 
-/* ตาราง SKILLS (ค่ามาตรฐานจอคอม) */
+/* ตาราง SKILLS (4 คอลัมน์บนคอมพิวเตอร์) */
 .skills-box-table {
     width: 100%;
     border-collapse: collapse;
@@ -311,18 +312,26 @@ hr.dotted-hr {
 /* ==========================================================
    5. BUTTONS & FORMS
    ========================================================== */
-.btn-primary {
+.btn-primary,
+.btn-secondary {
     display: inline-block;
-    background-color: #D5C0C6;
-    color: #302428;
-    padding: 10px 24px;
+    padding: 12px 24px;
+    border-radius: 0;
     text-decoration: none;
     font-weight: 700;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 3px 8px rgba(213, 192, 198, 0.4);
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    font-size: 0.95rem;
     text-align: center;
+    cursor: pointer;
+    border: none;
+    line-height: 1.2;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #D5C0C6;
+    color: #302428;
+    box-shadow: 0 3px 8px rgba(213, 192, 198, 0.4);
 }
 
 .btn-primary:hover {
@@ -331,16 +340,9 @@ hr.dotted-hr {
 }
 
 .btn-secondary {
-    display: inline-block;
     background-color: #9AB4BA;
     color: #1a2729;
-    padding: 10px 24px;
-    text-decoration: none;
-    font-weight: 700;
-    margin-left: 10px;
     box-shadow: 0 3px 6px rgba(154, 180, 186, 0.3);
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    text-align: center;
 }
 
 .btn-secondary:hover {
@@ -376,8 +378,12 @@ hr.dotted-hr {
     box-shadow: 0 0 0 3px rgba(154, 180, 186, 0.25);
 }
 
+/* การจัดวางปุ่มเริ่มต้น (Desktop) */
 .form-actions {
-    margin-top: 22px;
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
 
 a {
@@ -418,14 +424,28 @@ a:hover {
 }
 
 /* ==========================================================
-   7. RESPONSIVE DESIGN (ปรับแต่งสำหรับมือถือโดยเฉพาะ)
+   7. RESPONSIVE DESIGN (TABLET & IPAD: max-width 992px)
+   ========================================================== */
+@media (max-width: 992px) {
+    .content-container {
+        max-width: 720px;
+        padding: 0 20px;
+    }
+
+    .display-name {
+        font-size: clamp(2rem, 5vw, 2.8rem);
+    }
+}
+
+/* ==========================================================
+   8. RESPONSIVE DESIGN (MOBILE: max-width 768px)
    ========================================================== */
 @media (max-width: 768px) {
     .header-container {
-        padding: 35px 15px;
+        padding: 30px 16px;
     }
 
-    /* จัดโปรไฟล์ส่วนหัวให้เรียงตั้งตรงกึ่งกลาง */
+    /* จัดโปรไฟล์ส่วนหัวเป็นแนวตั้งกึ่งกลาง */
     .profile-layout-table, 
     .profile-layout-table tbody, 
     .profile-layout-table tr, 
@@ -434,10 +454,16 @@ a:hover {
         width: 100% !important;
         text-align: center !important;
         border-spacing: 0 !important;
+        padding: 0 !important;
     }
 
     .profile-img-cell {
         margin: 0 auto 15px auto;
+    }
+
+    .profile-img {
+        width: 140px;
+        height: 140px;
     }
 
     .profile-info-cell {
@@ -445,26 +471,32 @@ a:hover {
     }
 
     .display-name {
-        font-size: 2.1rem;
-        letter-spacing: 1px;
+        font-size: clamp(1.6rem, 7vw, 2.2rem);
+        letter-spacing: 0.5px;
+        word-break: break-word;
     }
 
     .personal-info-table {
         margin: 15px auto;
         display: table !important;
         text-align: left !important;
+        width: auto !important;
+        max-width: 100% !important;
     }
 
     .personal-info-table td {
         display: table-cell !important;
-        padding: 3px 6px;
-        font-size: 0.88rem;
+        padding: 4px 6px;
+        font-size: clamp(0.8rem, 3.5vw, 0.92rem);
+        word-break: break-word;
     }
 
-    /* กล่องข้อความและเนื้อหา */
+    /* โครงสร้างเนื้อหาหลัก */
     .content-container {
-        padding: 0 14px;
-        margin: 25px auto;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 14px !important;
+        margin: 20px auto;
     }
 
     .split-section {
@@ -476,7 +508,7 @@ a:hover {
     .square-title-box {
         width: 100%;
         min-width: 100%;
-        padding: 12px;
+        padding: 10px 15px;
         border-left: none;
         border-bottom: 4px solid rgba(0, 0, 0, 0.1);
     }
@@ -487,53 +519,104 @@ a:hover {
 
     .split-content-box {
         width: 100%;
-        padding: 18px 16px;
+        padding: 16px 18px;
+    }
+
+    .split-content-box p {
+        font-size: clamp(0.85rem, 3.8vw, 0.95rem);
+        text-align: left;
+        word-break: break-word;
     }
 
     .card {
-        padding: 20px 14px;
+        padding: 18px 12px !important;
+        width: 100% !important;
+        overflow: hidden !important;
     }
 
-    /* ตารางประสบการณ์ */
+    /* ตาราง Work Experience */
+    .experience-table {
+        width: 100%;
+        table-layout: fixed;
+    }
+
     .experience-table th, 
     .experience-table td {
-        padding: 8px 10px;
-        font-size: 0.85rem;
+        padding: 8px 6px;
+        font-size: clamp(0.78rem, 3.4vw, 0.88rem);
+        word-break: break-word;
     }
 
-    /* ตาราง Skills: บังคับให้อยู่ในกรอบ ไม่ล้นจอเด็ดขาด */
+    .experience-table td:first-child,
+    .experience-table th:first-child {
+        width: 45%;
+    }
+
+    /* ==========================================================
+       ตาราง SKILLS: คง 4 คอลัมน์ตามโจทย์อาจารย์ 100%
+       ล็อกขนาดไม่ให้ล้น และย่อฟอนต์/ดาวให้พอดีจอทุกรุ่น
+       ========================================================== */
     .skills-box-table {
+        display: table !important;
         width: 100% !important;
+        max-width: 100% !important;
         table-layout: fixed !important;
-        border-spacing: 0 !important;
+        border-collapse: collapse !important;
+        margin: 10px 0 0 0 !important;
+    }
+
+    .skills-box-table tr {
+        display: table-row !important;
     }
 
     .skills-box-table td {
-        padding: 8px 4px !important;
-        vertical-align: middle;
-        overflow: hidden;
+        display: table-cell !important;
+        vertical-align: middle !important;
+        padding: 8px 2px !important;
+        box-sizing: border-box !important;
     }
 
+    /* ช่องชื่อทักษะ (คอลัมน์ 1 และ 3) */
     .skills-box-table .skill-name {
-        width: 28% !important;
-        font-size: 0.82rem !important;
+        width: 27% !important;
+        font-size: clamp(0.68rem, 2.7vw, 0.85rem) !important;
+        font-weight: 600;
+        text-align: left !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
     }
 
+    /* ช่องดาวคะแนน (คอลัมน์ 2 และ 4) */
     .skills-box-table .skill-level {
-        width: 22% !important;
-        font-size: 0.72rem !important;
-        letter-spacing: 0px !important;
-        white-space: nowrap;
+        width: 23% !important;
+        font-size: clamp(0.55rem, 2.3vw, 0.8rem) !important;
+        letter-spacing: -1.5px !important;
+        text-align: center !important;
+        white-space: nowrap !important;
     }
 
-    /* ปุ่มในหน้า Contact Form */
+    .skills-box-table td:empty {
+        display: table-cell !important;
+        width: 23% !important;
+    }
+
+    /* ==========================================================
+       ปุ่มในหน้า Contact: บังคับเรียงแนวตั้งและเต็มความกว้าง
+       แก้ปัญหาปุ่ม Submit Message กับ Back to Home ทับกัน
+       ========================================================== */
     .form-actions {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
     }
 
-    .btn-secondary {
-        margin-left: 0;
+    .form-actions .btn-primary,
+    .form-actions .btn-secondary {
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 13px 16px !important;
     }
 }
