@@ -87,31 +87,13 @@ h1, h2, h3 {
 
 .tagline {
     color: #ffffff !important;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-size: 1.1rem;
     font-weight: 400;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-.display-name {
-    font-size: 3.1rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.1;
-    color: #ffffff;
-    margin-bottom: 12px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    display: inline-block;
-    word-break: break-word;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
-}
-
-.display-name:hover {
-    transform: translateX(8px) scale(1.02);
-    text-shadow: 0 0 16px rgba(255, 255, 255, 0.9), 0 3px 8px rgba(0, 0, 0, 0.3);
-}
-
+/* ตารางข้อมูลส่วนตัว (Desktop) */
 .personal-info-table {
     border-collapse: collapse;
     margin-bottom: 18px;
@@ -119,17 +101,49 @@ h1, h2, h3 {
 }
 
 .personal-info-table td {
-    padding: 4px 12px 4px 0;
+    padding: 5px 12px 5px 0;
     font-size: 0.98rem;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    vertical-align: middle;
 }
 
 .personal-info-table strong {
     color: #ffffff !important;
 }
 
+/* ==========================================================
+   ลูกเล่นเดิม: WASINEE SAARD ภายในแถวตาราง
+   เลื่อนไปข้างหน้า + เปล่งแสงนีออนสีขาวเมื่อชี้เมาส์
+   ========================================================== */
+.personal-info-table .display-name-text {
+    font-family: 'Mitr', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    transform-origin: left center;
+    cursor: default;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                color 0.3s ease, 
+                text-shadow 0.3s ease;
+}
+
+.personal-info-table .display-name-text:hover {
+    transform: translateX(10px) scale(1.03);
+    color: #ffffff !important;
+    text-shadow: 0 0 16px rgba(255, 255, 255, 0.95), 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.personal-info-table tr.name-row td {
+    padding-bottom: 12px;
+}
+
 .header-btn-wrap {
-    margin-top: 12px;
+    margin-top: 14px;
 }
 
 /* เส้นคั่นจุดไข่ปลา Dotted HR */
@@ -144,7 +158,7 @@ hr.dotted-hr {
 
 /* ==========================================================
    3. LAYOUT หัวข้อกล่องสี่เหลี่ยม (About Me & Favorite Foods)
-   ========================================================= */
+   ========================================================== */
 .content-container {
     max-width: 860px;
     width: 100%;
@@ -431,10 +445,6 @@ a:hover {
         max-width: 720px;
         padding: 0 20px;
     }
-
-    .display-name {
-        font-size: clamp(2rem, 5vw, 2.8rem);
-    }
 }
 
 /* ==========================================================
@@ -445,7 +455,7 @@ a:hover {
         padding: 30px 16px;
     }
 
-    /* จัดส่วนหัวให้เรียงตั้งตรงกึ่งกลาง */
+    /* จัดส่วนหัวโปรไฟล์ให้เรียงตั้งตรงกึ่งกลาง */
     .profile-layout-table, 
     .profile-layout-table tbody, 
     .profile-layout-table tr, 
@@ -470,20 +480,14 @@ a:hover {
         padding-left: 0 !important;
     }
 
-    .display-name {
-        font-size: clamp(1.6rem, 7vw, 2.2rem);
-        letter-spacing: 0.5px;
-        word-break: break-word;
-    }
-
     /* ==========================================================
-       คงคำสั่ง TABLE ตามโจทย์อาจารย์ 100% 
-       จัดสัดส่วนช่องให้อ่านง่าย สวยงาม ไม่แยกซ้ายขวากระจาย
+       คงคำสั่ง TABLE 100% สำหรับข้อมูลส่วนตัวบนมือถือ
+       ล็อกสัดส่วนช่องให้อยู่กึ่งกลางพอดี ไม่แยกซ้ายขวากระจาย
        ========================================================== */
     .personal-info-table {
         display: table !important; /* ยืนยันคำสั่ง TABLE */
         width: 100% !important;
-        max-width: 330px !important; /* จัดกึ่งกลางหน้าจอสวยงาม */
+        max-width: 330px !important; /* บีบให้อยู่กึ่งกลางพอดี */
         margin: 12px auto 18px auto !important;
         border-collapse: collapse !important;
         table-layout: fixed !important;
@@ -496,15 +500,34 @@ a:hover {
     .personal-info-table td {
         display: table-cell !important;
         vertical-align: top !important;
-        padding: 6px 4px !important;
+        padding: 5px 4px !important;
         color: #ffffff !important;
         line-height: 1.35 !important;
     }
 
-    /* ฝั่งซ้าย: หัวข้อ (Position, Major, Institution) */
+    /* แถวชื่อ WASINEE SAARD บนมือถือ พร้อมลูกเล่นย่อขยายกึ่งกลาง */
+    .personal-info-table .display-name-text {
+        font-size: clamp(1.3rem, 5.5vw, 1.75rem) !important;
+        letter-spacing: 1px !important;
+        line-height: 1.2 !important;
+        transform-origin: left center !important;
+    }
+
+    .personal-info-table .display-name-text:active,
+    .personal-info-table .display-name-text:hover {
+        transform: scale(1.03) !important;
+        text-shadow: 0 0 14px rgba(255, 255, 255, 0.95) !important;
+    }
+
+    .personal-info-table tr.name-row td {
+        padding-bottom: 8px !important;
+        vertical-align: middle !important;
+    }
+
+    /* ฝั่งซ้าย: หัวข้อ (Name, Position, Major, Institution) */
     .personal-info-table td:first-child {
         width: 32% !important;
-        text-align: right !important; /* ชิดขวาเพื่อให้เครื่องหมาย : ตรงกัน */
+        text-align: right !important; /* ชิดขวาให้เครื่องหมาย : ตรงกัน */
         padding-right: 8px !important;
         white-space: nowrap !important;
     }
@@ -514,7 +537,7 @@ a:hover {
         color: #f0f7f8 !important;
     }
 
-    /* ฝั่งขวา: รายละเอียดข้อความยาว */
+    /* ฝั่งขวา: รายละเอียดข้อความ */
     .personal-info-table td:last-child {
         width: 68% !important;
         text-align: left !important; /* ชิดซ้ายเสมอ */
@@ -630,7 +653,7 @@ a:hover {
     }
 
     /* ==========================================================
-       ปุ่มในหน้า Contact Form: บังคับเรียงแนวตั้ง ไม่ทับกัน
+       ปุ่มในหน้า Contact Form: เรียงแนวตั้ง ไม่ทับกัน
        ========================================================== */
     .form-actions {
         display: flex !important;
